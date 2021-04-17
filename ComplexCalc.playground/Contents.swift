@@ -3,6 +3,100 @@ print("Welcome back to the UW Calculator")
 // Your job is to fill out Calculator so all the expressions
 // below both compile and return "true"
 class Calculator {
+    func add(lhs: Int, rhs: Int) -> Int {
+        return lhs + rhs
+    }
+    
+    func subtract(lhs: Int, rhs: Int) -> Int {
+        return lhs - rhs
+    }
+    
+    func multiply(lhs: Int, rhs: Int) -> Int {
+        return lhs * rhs
+    }
+    
+    func divide(lhs: Int, rhs: Int) -> Int {
+        return lhs / rhs
+    }
+    
+    func mathOp(lhs: Int, rhs: Int, op:  (_ lhs : Int, _ rhs: Int) -> (Int)) -> Int {
+        return op(lhs, rhs)
+        
+    }
+    
+    func add(_ numbers: [Int]) -> Int {
+        var total = 0
+        for i in 0...numbers.endIndex - 1 {
+            total = total + numbers[i]
+        }
+        
+        return total
+    }
+    
+    func multiply(_ numbers: [Int]) -> Int {
+        var total = 0
+        for i in 0...numbers.endIndex - 1 {
+            total = total * numbers[i]
+        }
+        
+        return total
+    }
+    
+    func avg(_ numbers: [Int]) -> Int {
+        var total = 0
+        for i in 0...numbers.endIndex - 1 {
+            total = total + numbers[i]
+        }
+        
+        return total / (numbers.endIndex - 1)
+    }
+    
+    func count(_ numbers: [Int]) -> Int {
+        return (numbers.endIndex - 1)
+    }
+    
+    func mathOp(args: [Int], beg: Int, op: (_ first: Int, _ second: Int) -> Int) -> Int {
+        
+    }
+    
+    func add(lhs: (Int, Int), rhs: (Int, Int)) -> (Int, Int) {
+        return ((lhs.0 + rhs.0), (lhs.1 + rhs.1))
+    }
+    
+    func subtract(lhs: (Int, Int), rhs: (Int, Int)) -> (Int, Int) {
+        return ((lhs.0 - rhs.0), (lhs.1 - rhs.1))
+    }
+    
+    func add(lhs: [String: Int], rhs: [String: Int]) -> [String: Int] {
+        let x1 = lhs["x"]!
+        let x2 = rhs["x"]!
+        
+        let x = x1 + x2
+        
+        let y1 = lhs["y"]!
+        let y2 = rhs["y"]!
+        
+    
+        let y = y1 + y2
+        
+        return (["x": x, "y": y])
+    }
+    
+    func subtract(lhs: [String: Int], rhs: [String: Int]) -> [String: Int] {
+        let x1 = lhs["x"]!
+        let x2 = rhs["x"]!
+        
+        let x = x1 - x2
+    
+        let y1 = lhs["y"]!
+        let y2 = rhs["y"]!
+        
+    
+        let y = y1 - y2
+        
+        return (["x": x, "y": y])
+    }
+    
     
 }
 
